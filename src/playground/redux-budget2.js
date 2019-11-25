@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import uuid from "uuid";
-//add expense
 
+//add expense
 const addExpense = (expense = {}) => ({
   type: "ADD_EXPENSE",
   expense: {
@@ -33,7 +33,7 @@ const setTextFilter = (text = "") => ({
 const sortByDate = () => ({
   type: "SORT_BY_DATE"
 });
-//SET_BY_AMOUNT
+//SORT_BY_AMOUNT
 const sortByAmount = () => ({
   type: "SORT_BY_AMOUNT"
 });
@@ -142,8 +142,8 @@ const store = createStore(
 );
 store.subscribe(() => {
   const state = store.getState();
-  const VisibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-  console.log(VisibleExpenses);
+  const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+  console.log(visibleExpenses);
 });
 store.subscribe(() => {
   console.log(store.getState());
@@ -161,8 +161,8 @@ const expenseFour = store.dispatch(
   addExpense({ description: "Fennel", amount: 700, createdAt: 11000 })
 );
 //store.dispatch(setTextFilter("fe"));
-store.dispatch(sortByAmount());
-store.dispatch(sortByDate());
+//store.dispatch(sortByAmount());
+//store.dispatch(sortByDate());
 //Get visible expenses(Selectors)to filter
 
 //store.dispatch(removeExpense({ id: expenseOne.expense.id }));
