@@ -13,48 +13,49 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-database.ref("expenses").push({
-  description: "Rent",
-  note: "",
-  amoun: 109500,
-  createdAt: 976123498763
-});
-
-database.ref("expenses").push({
-  description: "Phone bill",
-  note: "",
-  amoun: 5900,
-  createdAt: 976123498763
-});
-database.ref("expenses").push({
-  description: "food",
-  note: "",
-  amoun: 1200,
-  createdAt: 976123498763
-});
-
-// const database = firebase.database();
-
-// firebase
-//   .database()
-//   .ref()
-//   .set({
-//     name: "Mark Zuckerberg",
-//     location: {
-//       city: "Kisumu",
-//       country: "Kenya"
-//     }
-//   })
-//   .then(() => {
-//     console.log("Data is saved");
-//   })
-//   .catch(e => {
-//     console.log("Data failed to save", e);
-//   });
-database.ref().on("value", snapshot => {
-  const val = snapshot.val();
-  console.log(val);
-});
-// database.ref().ref.update({
-//   "location/city": "Mombasa"
+// database.ref("expenses").push({
+//   description: "Rent",
+//   note: "",
+//   amoun: 109500,
+//   createdAt: 976123498763
 // });
+
+// database.ref("expenses").push({
+//   description: "Phone bill",
+//   note: "",
+//   amoun: 5900,
+//   createdAt: 976123498763
+// });
+// database.ref("expenses").push({
+//   description: "food",
+//   note: "",
+//   amoun: 1200,
+//   createdAt: 976123498763
+// });
+
+// // const database = firebase.database();
+
+// // firebase
+// //   .database()
+// //   .ref()
+// //   .set({
+// //     name: "Mark Zuckerberg",
+// //     location: {
+// //       city: "Kisumu",
+// //       country: "Kenya"
+// //     }
+// //   })
+// //   .then(() => {
+// //     console.log("Data is saved");
+// //   })
+// //   .catch(e => {
+// //     console.log("Data failed to save", e);
+// //   });
+// database.ref().on("value", snapshot => {
+//   const val = snapshot.val();
+//   console.log(val);
+// });
+// // database.ref().ref.update({
+// //   "location/city": "Mombasa"
+// // });
+export { firebase, database as default };
